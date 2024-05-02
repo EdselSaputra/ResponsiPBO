@@ -1,33 +1,24 @@
 package inheritance;
 
-public class Student extends Person{
-	String nim;
-	public Student() {
-		System.out.println("Inside Student:Constructor");
-		super.name="Anda";
-	}
-	
-	public String getNim()
-	{
-		return nim;
-	}
-	
-	@Override
-	public void identity()
-	{
-		System.out.println("NIM: "+getNim());
-		System.out.println("Nama: "+super.name);
-		System.out.println("Alamat: "+super.address);
-	}
-	
-	public void job()
-	{
-		System.out.println("Pekerjaan : Mahasiswa");
-	}
-	
-	public String getName() {
-		System.out.println("Student name: "+name);
-		return name;
-	}
-		
+import java.util.Scanner;
+
+public class Student extends Person {
+    private String nim;
+
+    public Student(Scanner scanner) {
+        super(scanner);
+        System.out.println("Masukkan NIM anda: ");
+        nim = scanner.nextLine();
+    }
+
+    public void bayar(Scanner scanner) {
+        System.out.println("Masukkan tagihan SPP: ");
+        int spp = scanner.nextInt();
+        System.out.println("Masukkan tagihan SKS: ");
+        int sks = scanner.nextInt();
+        System.out.println("Masukkan tagihan Modul: ");
+        int modul = scanner.nextInt();
+        int total = spp + sks + modul;
+        System.out.println("Total tagihan: " + total);
+    }
 }
